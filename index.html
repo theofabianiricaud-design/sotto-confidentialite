@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sotto - Politique de confidentialite</title>
+<meta name="description" content="Ce que l'application Sotto collecte, ce qu'elle ne collecte pas, et ce qui quitte votre telephone.">
+<style>
+  :root {
+    color-scheme: light dark;
+    --fond: #ffffff;
+    --fond-bloc: #f4f5f7;
+    --texte: #16181d;
+    --texte-doux: #5a6070;
+    --trait: #dfe2e8;
+    --accent: #1f6feb;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --fond: #14161a;
+      --fond-bloc: #1c1f25;
+      --texte: #e9ebef;
+      --texte-doux: #a2a9b8;
+      --trait: #2b2f37;
+      --accent: #6aa6ff;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--fond);
+    color: var(--texte);
+    font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  }
+  main { max-width: 46rem; margin: 0 auto; padding: 2.5rem 1rem 4rem; }
+  h1 { font-size: 1.8rem; line-height: 1.25; margin: 0 0 .35rem; }
+  h2 { font-size: 1.15rem; margin: 2.4rem 0 .6rem; }
+  h3 { font-size: 1rem; margin: 1.6rem 0 .4rem; }
+  p, ul { margin: 0 0 1rem; }
+  ul { padding-left: 1.2rem; }
+  li { margin-bottom: .4rem; }
+  .date { color: var(--texte-doux); font-size: .92rem; margin-bottom: 2rem; }
+  .resume {
+    background: var(--fond-bloc);
+    border: 1px solid var(--trait);
+    border-radius: .6rem;
+    padding: 1.1rem 1.2rem .4rem;
+    margin-bottom: 2rem;
+  }
+  .resume ul { margin-bottom: .8rem; }
+  a { color: var(--accent); }
+  footer {
+    margin-top: 3rem;
+    padding-top: 1.2rem;
+    border-top: 1px solid var(--trait);
+    color: var(--texte-doux);
+    font-size: .92rem;
+  }
+  .langue { font-size: .92rem; margin-bottom: 1.5rem; }
+</style>
+</head>
+<body>
+<main>
+  <p class="langue"><a href="en/">English version</a></p>
+
+  <h1>Politique de confidentialite de Sotto</h1>
+  <p class="date">Derniere mise a jour : 19 octobre 2026. Editeur : Theo Fabiani Ricaud, micro-entreprise, France. Contact : <a href="mailto:ramrim.strategie@gmail.com">ramrim.strategie@gmail.com</a>.</p>
+
+  <div class="resume">
+    <h2 style="margin-top:.2rem">En resume</h2>
+    <ul>
+      <li>Sotto ne demande <strong>aucun compte</strong> : ni numero de telephone, ni adresse de courriel, ni nom.</li>
+      <li>L'application ne lit pas votre carnet d'adresses et ne cherche pas vos contacts.</li>
+      <li>Il n'y a <strong>aucune mesure d'audience, aucune publicite, aucun traceur</strong>.</li>
+      <li>Vos messages sont chiffres de bout en bout : le relais qui les transporte ne peut pas les lire, et ne les garde pas.</li>
+      <li>Deux donnees techniques existent quand meme, et elles sont decrites plus bas : le <strong>jeton de notification</strong> et l'<strong>adresse IP</strong> vue par le relais.</li>
+    </ul>
+  </div>
+
+  <h2>1. Ce que l'application ne collecte pas</h2>
+  <p>Sotto fonctionne sans identite civile. Il n'existe nulle part de base d'utilisateurs, parce qu'il n'existe pas d'inscription. Concretement, l'application ne collecte ni ne transmet :</p>
+  <ul>
+    <li>votre nom, votre numero de telephone, votre adresse de courriel ;</li>
+    <li>votre carnet d'adresses ou vos contacts ;</li>
+    <li>votre position geographique ;</li>
+    <li>votre identifiant publicitaire ou tout autre identifiant de suivi ;</li>
+    <li>la liste de vos conversations, de vos correspondants ou de vos horaires d'usage ;</li>
+    <li>le contenu de vos messages, de vos pieces jointes ou de vos messages vocaux.</li>
+  </ul>
+  <p>Votre pseudonyme et votre cle publique sont choisis par vous et ne sont connus que des personnes a qui vous les montrez.</p>
+
+  <h2>2. Les seules donnees qui quittent votre telephone</h2>
+
+  <h3>2.1. Les messages, chiffres de bout en bout</h3>
+  <p>Un message part chiffre pour la cle de son destinataire, transite par un relais, et ne peut etre ouvert que par ce destinataire. Le relais voit passer des donnees chiffrees qu'il ne peut pas lire. Il conserve un message en memoire vive le temps de le remettre, dix minutes au plus, puis l'oublie : il n'a pas de base de donnees, et rien n'est ecrit sur son disque.</p>
+  <p>Le relais voit en revanche les <strong>empreintes de cles</strong> necessaires a l'acheminement, la taille des donnees et l'instant de l'envoi. Ces informations ne disent pas qui vous etes, mais elles disent que deux cles se parlent. C'est la limite connue de cette architecture, et elle est assumee plutot que cachee.</p>
+
+  <h3>2.2. Le jeton de notification</h3>
+  <p>Pour que vous soyez prevenu d'un message quand l'application est fermee, le telephone recoit de Google un <strong>jeton de notification</strong> (Firebase Cloud Messaging), propre a cette installation. Ce jeton est transmis au relais, qui l'emploie pour demander a Google de reveiller l'application.</p>
+  <p>La notification envoyee est <strong>vide</strong> : elle ne contient ni expediteur, ni texte, ni piece jointe. Elle dit seulement a l'application de se reveiller et d'aller voir. Google apprend donc qu'un reveil a ete demande pour une installation, a un instant donne, et rien de plus. Un jeton est une donnee personnelle au sens du RGPD : il est conserve le temps de l'installation et disparait avec elle.</p>
+  <p>Ce reveil repose sur un service de Google. Si vous le refusez, l'application reste utilisable : les messages arrivent quand vous l'ouvrez.</p>
+
+  <h3>2.3. L'adresse IP</h3>
+  <p>Comme tout serveur, le relais voit l'adresse IP depuis laquelle votre telephone se connecte, le temps de la connexion. Elle n'est ni enregistree dans un journal durable, ni rapprochee d'une identite. Elle est une donnee personnelle au sens du RGPD, et c'est la raison pour laquelle elle figure ici.</p>
+
+  <h2>3. Ce qui reste sur votre telephone</h2>
+  <ul>
+    <li><strong>Vos cles.</strong> Votre cle privee est produite sur l'appareil et protegee par le coffre materiel d'Android (Android Keystore), avec votre passphrase. Elle ne quitte jamais le telephone, sauf si vous produisez vous-meme une sauvegarde chiffree.</li>
+    <li><strong>Vos conversations.</strong> Elles vivent en memoire vive et disparaissent a la fermeture de l'application. Rien n'est ecrit en clair.</li>
+    <li><strong>Votre annuaire de cles.</strong> Les cles publiques que vous avez acceptees, et le niveau de confiance que vous leur avez donne, sont conserves chiffres sur l'appareil.</li>
+    <li><strong>La sauvegarde de votre identite</strong>, si vous en produisez une : c'est un fichier chiffre par une passphrase que vous seul connaissez. Il va ou vous decidez de le mettre. Personne ne peut le dechiffrer a votre place, et sa perte est definitive.</li>
+  </ul>
+  <p>Effacer l'identite depuis l'application detruit la cle du coffre materiel, ce qui rend illisible, definitivement, tout ce qui etait conserve.</p>
+
+  <h2>4. Autorisations demandees, et pourquoi</h2>
+  <ul>
+    <li><strong>Appareil photo</strong> : lire le QR code d'un correspondant, pour verifier sa cle en personne. Aucune image n'est conservee ni transmise.</li>
+    <li><strong>Micro</strong> : enregistrer un message vocal, quand vous le demandez.</li>
+    <li><strong>Fichiers et photos</strong> : joindre un document ou une image que vous choisissez, un par un.</li>
+    <li><strong>Notifications</strong> : vous prevenir de l'arrivee d'un message.</li>
+    <li><strong>Reseau</strong> : joindre le relais.</li>
+  </ul>
+  <p>Aucune de ces autorisations n'est utilisee en arriere-plan a d'autres fins.</p>
+
+  <h2>5. Signalement de probleme et journal de plantage</h2>
+  <p>L'application ne remonte aucun rapport automatique. Si une panne survient, un journal technique est ecrit sur le telephone, et il y reste. L'ecran de signalement vous montre <strong>en entier</strong> le texte qui serait copie, le journal n'y est joint que si vous cochez la case, et c'est vous qui envoyez ce texte, a l'adresse de votre choix. L'application n'a pas de destinataire a votre place.</p>
+
+  <h2>6. Paiement</h2>
+  <p>L'application est gratuite. Une fonction payante est prevue dans une version ulterieure : la conservation durable des conversations. Le paiement passerait alors par Google Play, qui connait l'acheteur ; l'application, elle, ne rapprocherait pas cet achat de votre pseudonyme ni de vos cles. Cette page sera mise a jour avant qu'une telle fonction n'existe.</p>
+
+  <h2>7. Destinataires et transferts hors Union europeenne</h2>
+  <p>Les donnees decrites ci-dessus ne sont vendues a personne et ne sont communiquees a aucun partenaire commercial. Deux tiers techniques interviennent :</p>
+  <ul>
+    <li><strong>Google</strong> (Firebase Cloud Messaging) pour le reveil de l'application, ce qui implique un transfert vers les Etats-Unis, encadre par les clauses contractuelles types de la Commission europeenne ;</li>
+    <li><strong>l'hebergeur du relais</strong>, situe dans l'Union europeenne, qui fournit la machine sans acceder a son contenu.</li>
+  </ul>
+  <p>Google Play collecte par ailleurs ses propres donnees d'installation, independamment de l'application : cela releve de la politique de confidentialite de Google.</p>
+
+  <h2>8. Durees de conservation</h2>
+  <ul>
+    <li>Message en attente de remise : en memoire vive du relais, le temps de la remise, et <strong>dix minutes au plus</strong> si le destinataire est hors ligne. Passe ce delai, l'enveloppe est detruite. Jamais sur disque, et cinquante enveloppes au plus par destinataire.</li>
+    <li>Jeton de notification : le temps de l'installation.</li>
+    <li>Adresse IP : le temps de la connexion.</li>
+    <li>Tout le reste : sur votre telephone, jusqu'a ce que vous l'effaciez.</li>
+  </ul>
+
+  <h2>9. Vos droits</h2>
+  <p>Le RGPD vous donne un droit d'acces, de rectification, d'effacement, de limitation et d'opposition. La particularite de Sotto est qu'il n'y a presque rien a exercer : sans compte, l'editeur ne detient aucun dossier a votre nom et ne peut pas vous reconnaitre. En pratique :</p>
+  <ul>
+    <li>desinstaller l'application fait disparaitre le jeton de notification ;</li>
+    <li>effacer l'identite depuis l'application detruit les cles et tout ce qu'elles protegeaient ;</li>
+    <li>pour toute question, ecrivez a <a href="mailto:ramrim.strategie@gmail.com">ramrim.strategie@gmail.com</a>. Vous pouvez aussi saisir la CNIL.</li>
+  </ul>
+
+  <h2>10. Mineurs</h2>
+  <p>L'application n'est pas destinee aux enfants et ne leur propose aucun contenu. Elle ne demande pas d'age, puisqu'elle ne demande aucune donnee personnelle.</p>
+
+  <h2>11. Securite, dit sans exageration</h2>
+  <p>Sotto emploie des standards eprouves : OpenPGP pour l'identite et le chiffrement, un cliquet double pour renouveler les cles a chaque message. Le code n'a pas encore fait l'objet d'un audit independant. Tant que ce sera le cas, rien ici ne doit etre lu comme une garantie de securite absolue, et l'application ne doit pas etre employee dans une situation ou votre securite physique depend du secret de vos messages.</p>
+
+  <h2>12. Modifications de cette page</h2>
+  <p>Toute modification sera publiee ici, avec une nouvelle date de mise a jour. Un changement qui etendrait les donnees collectees sera annonce dans l'application avant d'entrer en vigueur.</p>
+
+  <footer>
+    <p>Sotto - Theo Fabiani Ricaud, micro-entreprise, France. <a href="mailto:ramrim.strategie@gmail.com">ramrim.strategie@gmail.com</a></p>
+  </footer>
+</main>
+</body>
+</html>

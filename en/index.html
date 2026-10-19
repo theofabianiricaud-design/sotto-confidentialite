@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sotto - Privacy policy</title>
+<meta name="description" content="What the Sotto app collects, what it does not, and what leaves your phone.">
+<style>
+  :root {
+    color-scheme: light dark;
+    --fond: #ffffff;
+    --fond-bloc: #f4f5f7;
+    --texte: #16181d;
+    --texte-doux: #5a6070;
+    --trait: #dfe2e8;
+    --accent: #1f6feb;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --fond: #14161a;
+      --fond-bloc: #1c1f25;
+      --texte: #e9ebef;
+      --texte-doux: #a2a9b8;
+      --trait: #2b2f37;
+      --accent: #6aa6ff;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--fond);
+    color: var(--texte);
+    font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  }
+  main { max-width: 46rem; margin: 0 auto; padding: 2.5rem 1rem 4rem; }
+  h1 { font-size: 1.8rem; line-height: 1.25; margin: 0 0 .35rem; }
+  h2 { font-size: 1.15rem; margin: 2.4rem 0 .6rem; }
+  h3 { font-size: 1rem; margin: 1.6rem 0 .4rem; }
+  p, ul { margin: 0 0 1rem; }
+  ul { padding-left: 1.2rem; }
+  li { margin-bottom: .4rem; }
+  .date { color: var(--texte-doux); font-size: .92rem; margin-bottom: 2rem; }
+  .resume {
+    background: var(--fond-bloc);
+    border: 1px solid var(--trait);
+    border-radius: .6rem;
+    padding: 1.1rem 1.2rem .4rem;
+    margin-bottom: 2rem;
+  }
+  .resume ul { margin-bottom: .8rem; }
+  a { color: var(--accent); }
+  footer {
+    margin-top: 3rem;
+    padding-top: 1.2rem;
+    border-top: 1px solid var(--trait);
+    color: var(--texte-doux);
+    font-size: .92rem;
+  }
+  .langue { font-size: .92rem; margin-bottom: 1.5rem; }
+</style>
+</head>
+<body>
+<main>
+  <p class="langue"><a href="../">Version francaise</a></p>
+
+  <h1>Sotto privacy policy</h1>
+  <p class="date">Last updated: 19 October 2026. Publisher: Theo Fabiani Ricaud, sole trader, France. Contact: <a href="mailto:ramrim.strategie@gmail.com">ramrim.strategie@gmail.com</a>.</p>
+
+  <div class="resume">
+    <h2 style="margin-top:.2rem">In short</h2>
+    <ul>
+      <li>Sotto asks for <strong>no account</strong>: no phone number, no email address, no name.</li>
+      <li>The app does not read your address book and does not look for your contacts.</li>
+      <li>There is <strong>no analytics, no advertising, no tracker</strong>.</li>
+      <li>Your messages are end-to-end encrypted: the relay that carries them cannot read them, and does not keep them.</li>
+      <li>Two technical pieces of data still exist, and they are described below: the <strong>notification token</strong> and the <strong>IP address</strong> seen by the relay.</li>
+    </ul>
+  </div>
+
+  <h2>1. What the app does not collect</h2>
+  <p>Sotto works without a civil identity. There is no user database anywhere, because there is no sign-up. Concretely, the app neither collects nor transmits:</p>
+  <ul>
+    <li>your name, phone number or email address;</li>
+    <li>your address book or your contacts;</li>
+    <li>your location;</li>
+    <li>your advertising identifier or any other tracking identifier;</li>
+    <li>the list of your conversations, of the people you write to, or of when you use the app;</li>
+    <li>the content of your messages, attachments or voice messages.</li>
+  </ul>
+  <p>Your nickname and your public key are chosen by you, and are known only to the people you show them to.</p>
+
+  <h2>2. The only data that leaves your phone</h2>
+
+  <h3>2.1. Messages, end-to-end encrypted</h3>
+  <p>A message leaves encrypted for its recipient's key, passes through a relay, and can only be opened by that recipient. The relay sees encrypted data it cannot read. It holds a message in memory for as long as it takes to deliver it, ten minutes at most, then forgets it: it has no database, and nothing is written to its disk.</p>
+  <p>The relay does see the <strong>key fingerprints</strong> needed for routing, the size of the data and the time of sending. That does not say who you are, but it does say that two keys are talking. This is the known limit of this architecture, and it is stated rather than hidden.</p>
+
+  <h3>2.2. The notification token</h3>
+  <p>So that you can be told about a message while the app is closed, the phone receives a <strong>notification token</strong> from Google (Firebase Cloud Messaging), specific to this installation. That token is passed to the relay, which uses it to ask Google to wake the app up.</p>
+  <p>The notification sent is <strong>empty</strong>: it contains no sender, no text, no attachment. It only tells the app to wake up and look. Google therefore learns that a wake-up was requested for one installation at a given moment, and nothing more. A token is personal data under the GDPR: it lasts as long as the installation and disappears with it.</p>
+  <p>This wake-up relies on a Google service. If you decline it, the app still works: messages arrive when you open it.</p>
+
+  <h3>2.3. The IP address</h3>
+  <p>Like any server, the relay sees the IP address your phone connects from, for the duration of the connection. It is neither written to a lasting log nor matched to an identity. It is personal data under the GDPR, which is why it appears here.</p>
+
+  <h2>3. What stays on your phone</h2>
+  <ul>
+    <li><strong>Your keys.</strong> Your private key is generated on the device and protected by the Android hardware vault (Android Keystore), with your passphrase. It never leaves the phone, unless you produce an encrypted backup yourself.</li>
+    <li><strong>Your conversations.</strong> They live in memory and disappear when the app closes. Nothing is written in the clear.</li>
+    <li><strong>Your key directory.</strong> The public keys you have accepted, and the trust level you gave them, are kept encrypted on the device.</li>
+    <li><strong>Your identity backup</strong>, if you make one: it is a file encrypted with a passphrase only you know. It goes wherever you decide to put it. Nobody can decrypt it for you, and losing it is final.</li>
+  </ul>
+  <p>Erasing the identity from within the app destroys the hardware vault key, which makes everything that was stored permanently unreadable.</p>
+
+  <h2>4. Permissions requested, and why</h2>
+  <ul>
+    <li><strong>Camera</strong>: to read a contact's QR code and verify their key in person. No image is kept or transmitted.</li>
+    <li><strong>Microphone</strong>: to record a voice message, when you ask for one.</li>
+    <li><strong>Files and photos</strong>: to attach a document or an image you pick, one at a time.</li>
+    <li><strong>Notifications</strong>: to tell you a message has arrived.</li>
+    <li><strong>Network</strong>: to reach the relay.</li>
+  </ul>
+  <p>None of these permissions is used in the background for any other purpose.</p>
+
+  <h2>5. Problem reports and crash log</h2>
+  <p>The app sends no automatic report. If something breaks, a technical log is written on the phone and stays there. The reporting screen shows you the <strong>entire</strong> text that would be copied, the log is attached only if you tick the box, and you are the one who sends that text, to the address of your choice. The app has no recipient on your behalf.</p>
+
+  <h2>6. Payment</h2>
+  <p>The app is free. A paid feature is planned for a later version: keeping conversations beyond the session. Payment would then go through Google Play, which knows the buyer; the app itself would not link that purchase to your nickname or your keys. This page will be updated before any such feature exists.</p>
+
+  <h2>7. Recipients and transfers outside the European Union</h2>
+  <p>The data described above is sold to nobody and shared with no commercial partner. Two technical third parties are involved:</p>
+  <ul>
+    <li><strong>Google</strong> (Firebase Cloud Messaging) for waking the app, which implies a transfer to the United States, covered by the European Commission's standard contractual clauses;</li>
+    <li><strong>the relay's hosting provider</strong>, located in the European Union, which supplies the machine without access to its content.</li>
+  </ul>
+  <p>Google Play also collects its own installation data, independently of the app: that falls under Google's privacy policy.</p>
+
+  <h2>8. Retention periods</h2>
+  <ul>
+    <li>Message awaiting delivery: in the relay's memory, for as long as delivery takes, and <strong>at most ten minutes</strong> if the recipient is offline. After that the envelope is destroyed. Never on disk, and at most fifty envelopes per recipient.</li>
+    <li>Notification token: for the lifetime of the installation.</li>
+    <li>IP address: for the duration of the connection.</li>
+    <li>Everything else: on your phone, until you erase it.</li>
+  </ul>
+
+  <h2>9. Your rights</h2>
+  <p>The GDPR gives you rights of access, rectification, erasure, restriction and objection. The particularity of Sotto is that there is almost nothing to exercise them against: with no account, the publisher holds no file in your name and cannot recognise you. In practice:</p>
+  <ul>
+    <li>uninstalling the app removes the notification token;</li>
+    <li>erasing the identity from the app destroys the keys and everything they protected;</li>
+    <li>for any question, write to <a href="mailto:ramrim.strategie@gmail.com">ramrim.strategie@gmail.com</a>. You may also lodge a complaint with the French data protection authority (CNIL).</li>
+  </ul>
+
+  <h2>10. Children</h2>
+  <p>The app is not aimed at children and offers them no content. It does not ask for an age, since it asks for no personal data at all.</p>
+
+  <h2>11. Security, stated without exaggeration</h2>
+  <p>Sotto uses proven standards: OpenPGP for identity and encryption, a double ratchet to renew keys with every message. The code has not yet been independently audited. Until it has, nothing here should be read as a guarantee of absolute security, and the app should not be used in a situation where your physical safety depends on the secrecy of your messages.</p>
+
+  <h2>12. Changes to this page</h2>
+  <p>Any change will be published here, with a new update date. A change that would extend the data collected will be announced in the app before it takes effect.</p>
+
+  <footer>
+    <p>Sotto - Theo Fabiani Ricaud, sole trader, France. <a href="mailto:ramrim.strategie@gmail.com">ramrim.strategie@gmail.com</a></p>
+  </footer>
+</main>
+</body>
+</html>
