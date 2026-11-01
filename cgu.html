@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sotto — Conditions générales d'utilisation</title>
+<meta name="description" content="Ce que l'éditeur de Sotto garantit, ce qu'il ne garantit pas, et ce à quoi s'engage l'utilisateur.">
+<style>
+  :root {
+    color-scheme: light dark;
+    --fond: #ffffff;
+    --fond-bloc: #f4f5f7;
+    --texte: #16181d;
+    --texte-doux: #5a6070;
+    --trait: #dfe2e8;
+    --accent: #1f6feb;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --fond: #14161a;
+      --fond-bloc: #1c1f25;
+      --texte: #e9ebef;
+      --texte-doux: #a2a9b8;
+      --trait: #2b2f37;
+      --accent: #6aa6ff;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--fond);
+    color: var(--texte);
+    font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  }
+  main { max-width: 46rem; margin: 0 auto; padding: 2.5rem 1rem 4rem; }
+  h1 { font-size: 1.8rem; line-height: 1.25; margin: 0 0 .35rem; }
+  h2 { font-size: 1.15rem; margin: 2.4rem 0 .6rem; }
+  p, ul { margin: 0 0 1rem; }
+  ul { padding-left: 1.2rem; }
+  li { margin-bottom: .4rem; }
+  .date { color: var(--texte-doux); font-size: .92rem; margin-bottom: 2rem; }
+  a { color: var(--accent); }
+  code { background: var(--fond-bloc); padding: .1rem .3rem; border-radius: .25rem; font-size: .92em; }
+  footer {
+    margin-top: 3rem;
+    padding-top: 1.2rem;
+    border-top: 1px solid var(--trait);
+    color: var(--texte-doux);
+    font-size: .92rem;
+  }
+  .langue { font-size: .92rem; margin-bottom: 1.5rem; }
+</style>
+</head>
+<body>
+<main>
+  <p class="langue"><a href="./">Politique de confidentialité</a> · <a href="mentions-legales.html">Mentions légales</a></p>
+
+  <h1>Conditions générales d'utilisation de Sotto</h1>
+  <p class="date">Version du 1<sup>er</sup> novembre 2026. Éditeur : Théo Fabiani Ricaud, micro-entreprise, France. Contact : <a href="mailto:ramrim.strategie@gmail.com">ramrim.strategie@gmail.com</a>.</p>
+
+  <h2>1. Objet</h2>
+  <p>Les présentes conditions régissent l'utilisation de l'application Sotto, éditée par Théo Fabiani Ricaud. Installer l'application vaut acceptation.</p>
+
+  <h2>2. Description du service</h2>
+  <p>Sotto permet d'échanger des messages chiffrés de bout en bout au moyen du standard OpenPGP. L'application fonctionne sans compte utilisateur. Les clés sont produites sur l'appareil et n'en sortent pas.</p>
+  <p>L'acheminement des messages passe par un relais. L'application est livrée avec l'adresse d'un relais opéré par l'éditeur, utilisée par défaut afin qu'une installation neuve fonctionne sans configuration. L'utilisateur peut à tout moment en désigner un autre, ou héberger le sien : aucun relais n'est imposé.</p>
+  <p>L'application est gratuite. Tout ce qui sert à communiquer l'est sans condition : écrire, envoyer, joindre un fichier, dicter un message vocal, vérifier la clé d'un correspondant. Aucune fonction n'est payante dans cette version, et aucun achat n'y est proposé.</p>
+
+  <h2>3. Ce que l'éditeur garantit, et ce qu'il ne garantit pas</h2>
+  <p>L'éditeur s'engage à ce que l'application se comporte conformément à sa documentation publique, et à ce que celle-ci décrive fidèlement ses limites.</p>
+  <p>L'éditeur <strong>ne garantit pas</strong> :</p>
+  <ul>
+    <li>la confidentialité de vos échanges si votre appareil est compromis — aucune application ne le peut ;</li>
+    <li>la discrétion de vos communications vis-à-vis d'un observateur du réseau : le chiffrement protège le contenu, pas le fait que vous communiquiez ;</li>
+    <li>la disponibilité du relais fourni par défaut : il est mis à disposition sans engagement de service, et peut être interrompu, remplacé ou retiré ;</li>
+    <li>la disponibilité ni le comportement d'un relais qu'il n'opère pas ;</li>
+    <li>la récupération d'une clé privée perdue : elle est irrécupérable, par construction, et c'est ce qui fait la valeur du produit.</li>
+  </ul>
+  <p>Le service est fourni « en l'état ». Aucune obligation de résultat n'est souscrite quant à la sécurité absolue des échanges, notion qui n'existe pas.</p>
+  <p>Le code n'a pas fait l'objet d'un audit indépendant. Tant que ce sera le cas, l'application ne doit pas être employée dans une situation où la sécurité physique de l'utilisateur dépend du secret de ses messages.</p>
+
+  <h2>4. Obligations de l'utilisateur</h2>
+  <p>L'utilisateur s'engage à :</p>
+  <ul>
+    <li>respecter les lois applicables dans sa juridiction, notamment celles relatives au chiffrement, dont le régime varie d'un pays à l'autre ;</li>
+    <li>ne pas utiliser le service pour des contenus illicites ;</li>
+    <li>protéger sa passphrase et sauvegarder son identité ;</li>
+    <li>vérifier l'empreinte de ses correspondants avant de leur accorder sa confiance.</li>
+  </ul>
+  <p>L'éditeur n'a <strong>aucun moyen technique</strong> de connaître le contenu des échanges, donc aucun moyen de le modérer. Cette incapacité est une propriété du produit, pas un manquement.</p>
+
+  <h2>5. Signalement d'un abus</h2>
+  <p>L'éditeur ne pouvant lire aucun message, un signalement portant sur un contenu ne peut être traité. Les demandes des autorités ne peuvent aboutir qu'à ce que l'éditeur détient — c'est-à-dire rien, s'agissant du contenu. Un opérateur de relais peut, lui, détenir des données de connexion : c'est à lui que ces demandes doivent être adressées.</p>
+
+  <h2>6. Propriété intellectuelle</h2>
+  <p>L'application et le relais sont des logiciels propriétaires. L'installation de l'application en autorise l'usage personnel ; aucune licence n'est concédée sur le code source, dont la reproduction, la modification et la redistribution sont interdites sans accord écrit préalable de l'éditeur.</p>
+  <p>Les bibliothèques tierces conservent leurs licences respectives, consultables dans l'application.</p>
+
+  <h2>7. Responsabilité</h2>
+  <p>Dans les limites permises par la loi, la responsabilité de l'éditeur ne saurait être engagée pour un préjudice résultant :</p>
+  <ul>
+    <li>d'une perte de clé privée ou de passphrase ;</li>
+    <li>d'une compromission de l'appareil de l'utilisateur ou de son correspondant ;</li>
+    <li>du comportement d'un relais tiers ;</li>
+    <li>d'un usage contraire aux présentes conditions.</li>
+  </ul>
+  <p>Aucune clause ne vise à écarter la responsabilité de l'éditeur en cas de faute lourde ou dolosive, ni les droits impératifs du consommateur.</p>
+
+  <h2>8. Droit applicable</h2>
+  <p>Droit français. À défaut de résolution amiable, les tribunaux compétents sont ceux du ressort du siège de l'éditeur, sous réserve des règles impératives protégeant le consommateur.</p>
+
+  <h2>9. Évolution</h2>
+  <p>Toute modification substantielle sera portée à la connaissance des utilisateurs au sein de l'application avant son entrée en vigueur, et publiée ici avec une nouvelle date de version.</p>
+
+  <footer>
+    <p><a href="./">Politique de confidentialité</a> · <a href="mentions-legales.html">Mentions légales</a> · <a href="en/">English version</a></p>
+    <p>Sotto — Théo Fabiani Ricaud, micro-entreprise, France. <a href="mailto:ramrim.strategie@gmail.com">ramrim.strategie@gmail.com</a></p>
+  </footer>
+</main>
+</body>
+</html>

@@ -64,7 +64,7 @@
   <p class="langue"><a href="../">Version francaise</a></p>
 
   <h1>Sotto privacy policy</h1>
-  <p class="date">Last updated: 19 October 2026. Publisher: Theo Fabiani Ricaud, sole trader, France. Contact: <a href="mailto:ramrim.strategie@gmail.com">ramrim.strategie@gmail.com</a>.</p>
+  <p class="date">Last updated: 1 November 2026. Publisher: Theo Fabiani Ricaud, sole trader, France. Contact: <a href="mailto:ramrim.strategie@gmail.com">ramrim.strategie@gmail.com</a>.</p>
 
   <div class="resume">
     <h2 style="margin-top:.2rem">In short</h2>
@@ -93,6 +93,7 @@
 
   <h3>2.1. Messages, end-to-end encrypted</h3>
   <p>A message leaves encrypted for its recipient's key, passes through a relay, and can only be opened by that recipient. The relay sees encrypted data it cannot read. It holds a message in memory for as long as it takes to deliver it, ten minutes at most, then forgets it: it has no database, and nothing is written to its disk.</p>
+  <p>The app ships with the address of a relay <strong>operated by the publisher</strong>, <code>relais.sottoapp.fr</code>, used by default so that a fresh install works with no setup. The machine is rented from Scaleway, in its Amsterdam data centre (Netherlands), and therefore inside the European Union. You can point the app at another relay in the settings at any time, or host your own: no relay is imposed, and switching relays carries no data across, since a relay keeps none.</p>
   <p>The relay does see the <strong>key fingerprints</strong> needed for routing, the size of the data and the time of sending. That does not say who you are, but it does say that two keys are talking. This is the known limit of this architecture, and it is stated rather than hidden.</p>
 
   <h3>2.2. The notification token</h3>
@@ -115,24 +116,24 @@
   <h2>4. Permissions requested, and why</h2>
   <ul>
     <li><strong>Camera</strong>: to read a contact's QR code and verify their key in person. No image is kept or transmitted.</li>
-    <li><strong>Microphone</strong>: to record a voice message, when you ask for one.</li>
-    <li><strong>Files and photos</strong>: to attach a document or an image you pick, one at a time.</li>
-    <li><strong>Notifications</strong>: to tell you a message has arrived.</li>
+    <li><strong>Microphone</strong>: to record a voice message, when you ask for one. Requested the first time you press the microphone, never before.</li>
+    <li><strong>Notifications</strong>: to tell you a message has arrived, without showing its content.</li>
+    <li><strong>Biometrics</strong>: to unlock the app with your fingerprint, if you turn it on. The passcode always remains available.</li>
     <li><strong>Network</strong>: to reach the relay.</li>
   </ul>
-  <p>None of these permissions is used in the background for any other purpose.</p>
+  <p>Attaching a document or a photo goes through Android's own file picker: the picker opens the file you point at, and the app gets no access to your other files. The app requests no contacts, no storage and no location, and none of these permissions is used in the background for any other purpose.</p>
 
   <h2>5. Problem reports and crash log</h2>
   <p>The app sends no automatic report. If something breaks, a technical log is written on the phone and stays there. The reporting screen shows you the <strong>entire</strong> text that would be copied, the log is attached only if you tick the box, and you are the one who sends that text, to the address of your choice. The app has no recipient on your behalf.</p>
 
   <h2>6. Payment</h2>
-  <p>The app is free. A paid feature is planned for a later version: keeping conversations beyond the session. Payment would then go through Google Play, which knows the buyer; the app itself would not link that purchase to your nickname or your keys. This page will be updated before any such feature exists.</p>
+  <p>The app is free, and everything that serves to communicate is free without condition: writing, sending, attaching a file, dictating a voice message, verifying a key. A paid feature is planned for a later version: keeping conversations beyond the session. Payment would then go through Google Play, which knows the buyer; the app itself would not link that purchase to your nickname or your keys. This page will be updated before any such feature exists.</p>
 
   <h2>7. Recipients and transfers outside the European Union</h2>
   <p>The data described above is sold to nobody and shared with no commercial partner. Two technical third parties are involved:</p>
   <ul>
     <li><strong>Google</strong> (Firebase Cloud Messaging) for waking the app, which implies a transfer to the United States, covered by the European Commission's standard contractual clauses;</li>
-    <li><strong>the relay's hosting provider</strong>, located in the European Union, which supplies the machine without access to its content.</li>
+    <li><strong>Scaleway SAS</strong>, which rents the relay machine to the publisher, in its Amsterdam data centre (Netherlands). The host supplies the machine without access to its content, and no transfer outside the European Union follows from it.</li>
   </ul>
   <p>Google Play also collects its own installation data, independently of the app: that falls under Google's privacy policy.</p>
 
@@ -162,6 +163,7 @@
   <p>Any change will be published here, with a new update date. A change that would extend the data collected will be announced in the app before it takes effect.</p>
 
   <footer>
+    <p><a href="../cgu.html">Terms of use</a> · <a href="../mentions-legales.html">Legal notice</a> — both in French only. <a href="../">Version française</a></p>
     <p>Sotto - Theo Fabiani Ricaud, sole trader, France. <a href="mailto:ramrim.strategie@gmail.com">ramrim.strategie@gmail.com</a></p>
   </footer>
 </main>
